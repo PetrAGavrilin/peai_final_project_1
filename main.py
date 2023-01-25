@@ -2,6 +2,8 @@ from transformers import MarianTokenizer, AutoModelForSeq2SeqLM
 import streamlit as st
 import sentencepiece
 
+@st.cache(allow_output_mutation=True)  # Декоратор указывает, что данные будут загружаться только один раз и кэшироваться для будущего использования.
+
 def translate_text_ru_en(text):
 # функция переводит вводимый текст с русского на английский
     mname = 'Helsinki-NLP/opus-mt-ru-en'
