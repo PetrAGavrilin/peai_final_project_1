@@ -5,7 +5,7 @@ import sentencepiece
 
 
 def translate_text_ru_en(text):
-# функция переводит вводимый текст
+# функция переводит вводимый текст с русского на английский
     mname = 'Helsinki-NLP/opus-mt-ru-en'
     tokenizer = MarianTokenizer.from_pretrained(mname)
     model = AutoModelForSeq2SeqLM.from_pretrained(mname)
@@ -15,7 +15,7 @@ def translate_text_ru_en(text):
     return transl_text
 
 def translate_text_en_ru(text):
-# функция переводит вводимый текст
+# функция переводит вводимый текст с английского на русский
     mname = 'Helsinki-NLP/opus-mt-en-ru'
     tokenizer = MarianTokenizer.from_pretrained(mname)
     model = AutoModelForSeq2SeqLM.from_pretrained(mname)
