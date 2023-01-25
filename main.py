@@ -29,10 +29,17 @@ def load_text():
     return text   
     
     
-st.title('Перевод с русского на английский') # вывод шапки
+st.title('Перевод / Translation') # вывод шапки
+option = st.selectbox(
+    'Выберите язык',
+    ('С русского на английский', 'From English to Russian'))
+
 text = load_text() # загрузка текста
 result = st.button('Перевести') # присвоение статуса по нажатию кнопки
 
 if result:
-    ttext = translate_text_en_ru(text)
-    st.write(ttext) 
+    if option == 'From English to Russian'
+        ttext = translate_text_en_ru(text)        
+    else:
+        ttext = translate_text_ru_en(text)        
+    st.write(ttext)      
