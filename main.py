@@ -5,7 +5,7 @@ import streamlit as st
 
 def translate_text(text):
 # функция переводит вводимый текст
-    tokenizer = AutoTokenizer.from_pretrained("Helsinki-NLP/opus-mt-ru-en")
+    #tokenizer = AutoTokenizer.from_pretrained("Helsinki-NLP/opus-mt-ru-en")
     model = AutoModelForSeq2SeqLM.from_pretrained("Helsinki-NLP/opus-mt-ru-en")    
     transl_text = model.predict(text)
     return transl_text
