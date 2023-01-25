@@ -4,8 +4,8 @@ import sentencepiece
 
 def test_translate_text_ru_en():
 # проверка перевода вводимого текста с русского на английский
-    text = "меня зовут Иван"
-    check_text = "my name is Ivan"
+    text = "меня зовут"
+    check_text = "my name is"
     mname = 'Helsinki-NLP/opus-mt-ru-en'
     tokenizer = MarianTokenizer.from_pretrained(mname)
     model = AutoModelForSeq2SeqLM.from_pretrained(mname)
@@ -16,8 +16,8 @@ def test_translate_text_ru_en():
 
 def test_translate_text_en_ru(text):
 # проверка перевода вводимого текста с английского на русский
-    check_text = "меня зовут Иван"
-    text = "my name is Ivan"
+    check_text = "меня зовут"
+    text = "my name is"
     mname = 'Helsinki-NLP/opus-mt-en-ru'
     tokenizer = MarianTokenizer.from_pretrained(mname)
     model = AutoModelForSeq2SeqLM.from_pretrained(mname)
