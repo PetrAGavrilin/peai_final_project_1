@@ -1,12 +1,13 @@
-from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+from transformers import MarianTokenizer, AutoModelForSeq2SeqLM
 import torch 
 import streamlit as st
 
 
 def translate_text(text):
 # функция переводит вводимый текст
-    tokenizer = AutoTokenizer.from_pretrained("Helsinki-NLP/opus-mt-ru-en")
-    model = AutoModelForSeq2SeqLM.from_pretrained("Helsinki-NLP/opus-mt-ru-en")    
+    mname = 'Helsinki-NLP/opus-mt-ru-en'
+    tokenizer = MarianTokenizer.from_pretrained(mname)
+    model = AutoModelForSeq2SeqLM.from_pretrained(mname)
     input_ids = tokenizer.encode(text, return_tensors="pt")
     outputs = model.generate(input_ids)
     transl_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
