@@ -1,6 +1,7 @@
 from transformers import MarianTokenizer, AutoModelForSeq2SeqLM
 import torch 
 import streamlit as st
+import sentencepiece
 
 
 def translate_text(text):
