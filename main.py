@@ -24,8 +24,11 @@ def translate_text_en_ru(text):
     transl_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
     return transl_text
 
-def load_text():
-    text = st.text_input("Enter your text in English")
+def load_text(opt):
+    if opt == 'From English to Russian':
+        text = st.text_input("Enter your text in English")       
+    else:
+        text = st.text_input("Введите свой текст на русском")   
     return text   
     
     
@@ -34,7 +37,7 @@ option = st.selectbox(
     'Выберите язык',
     ('С русского на английский', 'From English to Russian'))
 
-text = load_text() # загрузка текста
+text = load_text(option) # загрузка текста
 result = st.button('Перевести') # присвоение статуса по нажатию кнопки
 
 if result:
