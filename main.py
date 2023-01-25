@@ -38,7 +38,7 @@ text = load_text() # загрузка текста
 result = st.button('Перевести') # присвоение статуса по нажатию кнопки
 
 if result:
-    if option == 'From English to Russian'
+    if option == 'From English to Russian':
         ttext = translate_text_en_ru(text)        
     else:
         ttext = translate_text_ru_en(text)        
